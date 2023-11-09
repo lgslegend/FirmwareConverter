@@ -10,11 +10,15 @@ const std::string VERSION = "0.1.0";
 
 const std::string OUTPUT_PATH = "output\\";
 const std::string TEMP_PATH = "temp\\";
-const std::string TEMP_UNPACK_PATH = TEMP_PATH + "unpack\\";
-const std::string TEMP_EXTRACT_PATH = TEMP_PATH + "extract\\";
 
 const std::string PAYLOAD_DUMPER = "bin\\payload-dumper\\payload-dumper-go.exe";
 const std::string SEVEN_ZIP = "bin\\7zip\\7z.exe";
+const std::string BROTLI = "bin\\brotli\\brotli.exe";
+const std::string SDAT2IMG = "bin\\sdat2img\\sdat2img.exe";
+
+std::vector<std::string> imagesDirectoryPath = { "firmware-update\\" };
+
+
 
 
 
@@ -40,8 +44,7 @@ std::string getFileExtension(std::string fileName = "")
         return(fileName.substr(lastDotPos + 1));
     }
     else {
-        std::cerr << "No file extension found." << std::endl;
-        exit(1);
+        return "";
     }
 }
 //判断路径是否有效
